@@ -2,7 +2,7 @@ function fn() {
   var env = karate.env; // get system property 'karate.env'
   karate.log('karate.env system property was:', env);
   if (!env) {
-    env = 'dev';
+    env = 'local';
   }
 
   var config = {
@@ -14,7 +14,7 @@ function fn() {
   if (env == 'dev') {
     // customize
     config.baseUrl = 'https://dev.fusemachines.com/'
-  } else if (env == 'e2e') {
+  } else if (env == 'stage') {
     // customize
     config.baseUrl = 'https://stage.fusemachines.com/'
   }
@@ -25,7 +25,7 @@ function fn() {
      config.token = signIn.token
 
   // don't waste time waiting for a connection or if servers don't respond within 5 seconds
-    karate.configure('connectTimeout', 60000);
-    karate.configure('readTimeout', 60000);
+    karate.configure('connectTimeout', 5000);
+    karate.configure('readTimeout', 5000);
   return config;
 }

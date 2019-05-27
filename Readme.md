@@ -1,6 +1,6 @@
 # Getting Started
 
-####Setup the project folder structure
+#### Setup the project folder structure
 
 ``
 mvn archetype:generate \
@@ -11,14 +11,19 @@ mvn archetype:generate \
 -DartifactId=myproject
 ``
 
-####Setup the .gitignore file
+#### Setup the .gitignore file
 
 `pom.xml 
 .idea 
 *.iml 
 target `
 
-####To practise
+#### To practise
 https://my-json-server.typicode.com/AbrialStha/demo-api
+
+### Changing the enviroment
+``
+mvn test -DargLine="-Dkarate.env=e2e"
+``
 
 
